@@ -1,0 +1,22 @@
+{
+  "name": "express-orm-project",
+  "version": "1.0.0",
+  "description": "Express.js project with ORM",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "express",
+    "orm",
+    "nodejs",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
+
