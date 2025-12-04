@@ -1,4 +1,26 @@
-Cấu trúc thư mục
+## Setup Server
+
+1.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+2.  **Start the server:**
+    - Development mode (with nodemon):
+      ```bash
+      npm run dev
+      ```
+    - Production mode:
+      ```bash
+      npm start
+      ```
+
+3.  **Check Health:**
+    - Open your browser or use curl to check if the server is running:
+      `http://localhost:8000/check_health`
+
+## Cấu trúc thư mục
+
 
 ### `src/`
 Thư mục chứa toàn bộ mã nguồn chính của ứng dụng.
