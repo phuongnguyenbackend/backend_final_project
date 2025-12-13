@@ -2,8 +2,7 @@ const userService = require('../services/userService');
 
 const getProfile = async (req, res) => {
     try {
-        // Default to user ID 14 as requested
-        const userId = 14;
+        const userId = 15;
         const user = await userService.getUserProfile(userId);
 
         if (!user) {
@@ -19,4 +18,24 @@ const getProfile = async (req, res) => {
 
 module.exports = {
     getProfile,
+    updateProfile: async (req, res) => {
+        try {
+            const userId = 15;
+            const { full_name, address, email } = req.body;
+
+            const updatedUser = await userService.updateUserProfile(userId, {
+                full_name,
+                address,
+                email
+            });
+
+            res.status(200).json(updatedUser);
+        } catch (error) {
+            console.error(error);
+            if (error.code === 'P2002') {
+                return res.status(409).json({ message: 'Email already exists' });
+            }
+            res.status(500).json({ message: 'Internal server error' });
+        }
+    }
 };
